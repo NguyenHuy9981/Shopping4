@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use Illuminate\Support\Str;
 use App\Components\Recusive;
+use App\Http\Requests\ValidateCategory;
 use Dotenv\Regex\Success;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -39,7 +40,7 @@ class CategoryController extends Controller
     }
 
 
-    function store(Request $request) {
+    function store(ValidateCategory $request) {
 
         if(!empty($request['name'])) {
 
@@ -75,7 +76,7 @@ class CategoryController extends Controller
         return view('admin.category.edit', compact('category', 'htmlOption'));
     }
 
-    function update($id, Request $request) {
+    function update($id, ValidateCategory $request) {
         $request->validate([
             'parent_id' => Rule::notIn([$id])
         ]);

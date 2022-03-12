@@ -26,15 +26,15 @@
             
               @csrf
                 <div class="form-group">
-                    <label>Tên danh mục</label>
-                    <input type="text" value="{{ old('name') }}"class="form-control" id="exampleInputEmail1" name="name" placeholder="Nhập tên sản phẩm">
+                    <label>Tên sản phẩm</label>
+                    <input type="text" value="{{ old('name') }}"class="form-control" name="name" placeholder="Nhập tên sản phẩm">
                     @error('name')
                         <div class="form-text text-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group">
                     <label>Giá sản phẩm</label>
-                    <input type="text" value="{{ old('price') }}" class="form-control" id="exampleInputEmail1" name="price" placeholder="Nhập giá sản phẩm">
+                    <input type="number" value="{{ old('price') }}" class="form-control" name="price" placeholder="Nhập giá sản phẩm">
                     @error('price')
                         <div div class="form-text text-danger">{{ $message }}</div>
                     @enderror
@@ -74,7 +74,7 @@
                     </div>
               </div>
               <div class="col-md-12">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Cập nhật</button>
               </div>
         </div>
       </div>

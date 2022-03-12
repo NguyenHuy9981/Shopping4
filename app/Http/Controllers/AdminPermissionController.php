@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Components\Recusive;
+use App\Http\Requests\ValidateCategory;
 use App\Permission;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,7 @@ class AdminPermissionController extends Controller
     }
 
 
-    function store(Request $request) {
+    function store(ValidateCategory $request) {
 
         if(!empty($request['name'])) {
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValidateRole;
 use App\Permission;
 use App\Role;
 use Illuminate\Http\Request;
@@ -22,12 +23,10 @@ class AdminRoleController extends Controller
 
     }
 
-    function store(Request $request) {
+    function store(ValidateRole $request) {
         
         $role = Role::create([
             'name' => $request['name'],
-            'display_name' => $request['name'],
-            
         ]);
         $role->permission()->attach($request['permissionOfRole']);
 
@@ -43,13 +42,11 @@ class AdminRoleController extends Controller
 
     }
 
-    function update(Request $request, $id) {
+    function update(ValidateRole $request, $id) {
 
         $role = Role::find($id);
         $role->update([
             'name' => $request['name'],
-            'display_name' => $request['name'],
-            
         ]);
         
         $role->permission()->sync($request['permissionOfRole']);

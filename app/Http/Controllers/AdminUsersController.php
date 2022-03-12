@@ -43,11 +43,6 @@ class AdminUsersController extends Controller
     }
 
     function update(Request $request, $id) {
-        User::find($id)->update([
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
-        ]);
         
         $user = User::find($id); //lấy user update vì ->update trả về true-false chứ ko trả về chính product đang sửa
         $user->roles()->sync($request['roles_id']);

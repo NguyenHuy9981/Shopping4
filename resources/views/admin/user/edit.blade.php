@@ -26,21 +26,15 @@
             
               @csrf
                 <div class="form-group">
-                    <label>Tên danh mục</label>
-                    <input type="text" value="{{ $user->name }}"class="form-control" name="name" placeholder="Nhập tên">
+                    <label>Tên nhân viên</label>
+                    <input type="text" value="{{ $user->name }}"class="form-control" name="name" disabled>
                     
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" value="{{ $user->email }}" class="form-control" name="email" placeholder="Nhập email">
+                    <input type="email" value="{{ $user->email }}" class="form-control" name="email" disabled>
                     
                 </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" value="" class="form-control" name="password" placeholder="Nhập password">
-                    
-                </div>
-                
                 <div class="form-group">
                     <label>Nhập vai trò</label>
                     <select class="form-control tag-select" multiple="multiple" name="roles_id[]">
@@ -52,7 +46,7 @@
           </div>
               
               <div class="col-md-12">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Cập nhật</button>
               </div>
         </div>
       </div>

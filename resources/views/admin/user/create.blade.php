@@ -26,7 +26,7 @@
             
               @csrf
                 <div class="form-group">
-                    <label>Tên danh mục</label>
+                    <label>Tên nhân viên</label>
                     <input type="text" value="{{ old('name') }}"class="form-control" name="name" placeholder="Nhập tên">
                     
                 </div>
@@ -52,7 +52,7 @@
           </div>
               
               <div class="col-md-12">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Cập nhật</button>
               </div>
         </div>
       </div>

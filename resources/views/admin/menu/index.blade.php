@@ -25,19 +25,26 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">STT</th>
               <th scope="col">Tên menu</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
+          @php
+              $t = 0;
+          @endphp
+
           @foreach($menus as $menu)
             <tr>
-              <th scope="row">{{ $menu->id }}</th>
+              @php
+                $t += 1;
+              @endphp
+              <th scope="row">{{ $t }}</th>
               <td>{{ $menu->name }}</td>
               <td>
                 <a href="{{ route('menus.edit', $menu->id) }}" class="btn btn-secondary">Sửa</a>
-                <a href="" class="btn btn-danger">Xóa</a>
+                <a href="" data-url="{{ route('menus.delete', $menu->id) }}" class="btn btn-danger action_delete">Xóa</a>
               </td>
             </tr>
             @endforeach
@@ -55,4 +62,11 @@
   </div>
 
 
+@endsection
+
+@section('js')
+  <!-- import thư viện JS Sweetalert2 -->
+  <script src="{{ asset('public\vendors\sweetalert2\sweetalert2@11.js') }}"></script>
+  <!-- import thư viện JS -->
+  <script src="{{ asset('public\admin\index.js') }}"></script>
 @endsection

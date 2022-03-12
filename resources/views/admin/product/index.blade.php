@@ -26,7 +26,7 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">STT</th>
               <th scope="col">Tên sản phẩm</th>
               <th scope="col">Giá</th>
               <th scope="col">Hình ảnh</th>
@@ -35,9 +35,17 @@
             </tr>
           </thead>
           <tbody>
+          @php
+              $t = 0;
+          @endphp
+
             @foreach($products as $product)
             <tr>
-              <th scope="row">{{ $product->id }}</th>
+              @php
+                $t += 1;
+              @endphp
+
+              <th scope="row">{{ $t }}</th>
               <td>{{ $product->name }}</td>
               <td>{{ number_format($product->price) }}</td>
               <td>

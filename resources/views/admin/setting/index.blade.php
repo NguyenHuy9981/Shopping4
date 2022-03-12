@@ -33,16 +33,24 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">STT</th>
               <th scope="col">config_key</th>
               <th scope="col">config_value</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
+          @php
+              $t = 0;
+          @endphp
+
           @foreach($settings as $setting)
             <tr>
-              <th scope="row">{{ $setting->id }}</th>
+              @php
+                $t += 1;
+              @endphp
+
+              <th scope="row">{{ $t }}</th>
               <td>{{ $setting->config_key }}</td>
               <td>{{ $setting->config_value }}</td>
              

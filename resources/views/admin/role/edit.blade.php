@@ -16,7 +16,7 @@
     
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-        @include('partials.header-content', ['name' => 'Role', 'key' => 'Cập nhật'])
+        @include('partials.header-content', ['name' => 'Vai trò', 'key' => 'cập nhật'])
     <!-- /.content-header -->
 
     <!-- Main content -->
@@ -29,15 +29,12 @@
               @csrf
                 <div class="form-group">
                     <label>Tên vai trò (Role)</label>
-                    <input type="text" value="{{ $role->name }}"class="form-control" id="exampleInputEmail1" name="name" placeholder="Nhập tên sản phẩm">
+                    <input type="text" value="{{ $role->name }}"class="form-control" name="name" placeholder="Nhập tên vai trò">
                     @error('name')
                         <div class="form-text text-danger">{{ $message }}</div>
                     @enderror
                 </div>
-                <div class="form-group">
-                    <label>Mô tả vai trò</label>
-                    <textarea class="form-control" id="exampleInputEmail1" name="display_name" placeholder="Nhập mô tả">{{ $role->display_name }}</textarea>
-                </div>
+               
                 @foreach($permissions as $permission)
                 <div class="form-group">
                     <h5>{{ $permission->name }}</h5>
@@ -49,7 +46,7 @@
                     @endforeach
                 </div>
                @endforeach
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Cập nhật</button>
               </div>
         </div>
       </div>

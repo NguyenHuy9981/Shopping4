@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+
 Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::prefix('menus')->group(function () {
@@ -14,6 +16,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('/edit/{id}', 'MenuController@edit')->name('menus.edit');
     
         Route::post('/update/{id}', 'MenuController@update')->name('menus.update');
+
+        Route::get('/delete/{id}', 'MenuController@delete')->name('menus.delete');
     
     });
 

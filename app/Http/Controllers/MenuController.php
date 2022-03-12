@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Components\MenuRecusive;
+use App\Http\Requests\ValidateCategory;
 
 class MenuController extends Controller
 {
@@ -32,7 +33,7 @@ class MenuController extends Controller
         return view('admin.menu.create', compact('htmlOption'));
     }
 
-    function store(Request $request) {
+    function store(ValidateCategory $request) {
 
         $cat = $this->menu->create([
             'name' => $request['name'],
@@ -51,7 +52,7 @@ class MenuController extends Controller
         return view('admin.menu.edit', compact('menu', 'htmlOption'));
     }
 
-    function update($id, Request $request) {
+    function update($id, ValidateCategory $request) {
         $request->validate([
             'parent_id' => Rule::notIn([$id])
         ]);
@@ -63,5 +64,18 @@ class MenuController extends Controller
         ]);
 
         return redirect( route('menus.index') );
+    }
+
+
+    function delete($id) {
+
+        $this->menu->find($id)->delete();
+        return response()->json([
+            'Huy' => 'Beautifull',
+            'message' => 'success',
+            
+        ], 200);
+        
+
     }
 }

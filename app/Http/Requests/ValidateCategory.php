@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ValidateProduct extends FormRequest
+class ValidateCategory extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,7 @@ class ValidateProduct extends FormRequest
     public function rules()
     {
         return [
-            'name'=> 'required|unique:products',
-            'price' => 'required',
-            'content' => 'required',
-            // 'parent_id' => 'required',
-            'feature_image' => 'required',
+            'name'=> 'required',
         ];
     }
 
@@ -36,17 +32,13 @@ class ValidateProduct extends FormRequest
     {
         return [
             'required' => ':attribute không được để trống',
-            'unique' => ':attribute này đã tồn tại',
         ];
     }
 
     public function attributes()
     {
         return [
-            'name' => 'Sản phẩm',
-            'price' => 'Giá tiền',
-            'content' => 'Nội dung',
-            'feature_image' => 'Ảnh phụ',
+            'name' => 'Nội dung',
         ];
     }
 }

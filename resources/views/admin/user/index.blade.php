@@ -20,21 +20,26 @@
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-12">
-            <a href="{{ route('admin.user.create') }}" class="btn btn-success float-right m-2 mb-2" role="button" aria-pressed="true">Thêm</a>
-          </div>
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">STT</th>
               <th scope="col">Tên</th>
               <th scope="col">Email</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
+          @php
+              $t = 0;
+          @endphp
+
             @foreach($users as $user)
             <tr>
+              @php
+                $t += 1;
+              @endphp
+              
               <th scope="row">{{ $user->id }}</th>
               <td>{{ $user->name }}</td>
               <td>{{ $user->email }}</td>

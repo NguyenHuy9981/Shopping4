@@ -26,18 +26,24 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">STT</th>
               <th scope="col">Tên vai trò</th>
-              <th scope="col">Mô tả vai trò</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
+          @php
+              $t = 0;
+          @endphp
+
             @foreach($roles as $role)
             <tr>
-              <th scope="row">{{ $role->id }}</th>
+              @php
+                $t += 1;
+              @endphp
+
+              <th scope="row">{{ $t }}</th>
               <td>{{ $role->name }}</td>
-              <td>{{ $role->display_name }}</td>
               <td>
                 <a href="{{ route('role.edit', $role->id) }}" class="btn btn-secondary">Sửa</a>
                 <a href="" data-url="" class="btn btn-danger action_delete">Xóa</a>

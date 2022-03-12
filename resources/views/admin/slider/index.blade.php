@@ -26,7 +26,7 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">STT</th>
               <th scope="col">Tên Slider</th>
               <th scope="col">Mô tả</th>
               <th scope="col">Hình ảnh</th>
@@ -34,9 +34,17 @@
             </tr>
           </thead>
           <tbody>
+          @php
+              $t = 0;
+          @endphp
+
             @foreach($sliders as $slider)
             <tr>
-              <th scope="row">{{ $slider->id }}</th>
+              @php
+                $t += 1;
+              @endphp
+
+              <th scope="row">{{ $t }}</th>
               <td>{{ $slider->name }}</td>
               <td>{{ optional($slider)->description }}</td>
               <td>

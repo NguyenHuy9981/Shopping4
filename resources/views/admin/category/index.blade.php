@@ -24,15 +24,23 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">STT</th>
               <th scope="col">Tên danh mục</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
+          @php
+              $t = 0;
+          @endphp
+
             @foreach($categories as $category)
             <tr>
-              <th scope="row">{{ $category->id }}</th>
+              @php
+                $t += 1;
+              @endphp
+
+              <th scope="row">{{ $t }}</th>
               <td>{{ $category->name }}</td>
               <td>
                 <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-secondary">Sửa</a>

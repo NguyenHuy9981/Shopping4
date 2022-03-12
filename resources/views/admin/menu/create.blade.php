@@ -22,17 +22,20 @@
             <form action="{{ route('menus.store') }}" method="POST">
               @csrf
                 <div class="form-group">
-                    <label>Tên danh mục</label>
+                    <label>Tên menu</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" name="name" placeholder="Nhập tên menu">
+                    @error('name')
+                        <div class="form-text text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Chọn menu cha</label>
                     <select class="form-control" name="parent_id">
-                    <option value="0">Chọn danh mục cha</option>
+                    <option value="0">Chọn menu cha</option>
                     {!! $htmlOption !!}
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
             </form>
           </div>
         </div>

@@ -36,7 +36,7 @@
                 </div>
                 <div class="form-group">
                     <label>Giá sản phẩm</label>
-                    <input type="text" class="form-control" value="{{ $product->price }}" id="exampleInputEmail1" name="price" placeholder="Nhập giá sản phẩm">
+                    <input type="number" class="form-control" value="{{ $product->price }}" id="exampleInputEmail1" name="price" placeholder="Nhập giá sản phẩm">
                     @error('price')
                         <div div class="form-text text-danger">{{ $message }}</div>
                     @enderror
@@ -83,7 +83,7 @@
                     </div>
               </div>
               <div class="col-md-12">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Cập nhật</button>
               </div>
         </div>
       </div>

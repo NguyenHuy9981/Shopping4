@@ -25,6 +25,9 @@
                 <div class="form-group">
                     <label>Tên danh mục</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" name="name" placeholder="Nhập tên danh mục">
+                    @error('name')
+                        <div class="form-text text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Chọn danh mục cha</label>
@@ -33,7 +36,7 @@
                     {!! $htmlOption !!}
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
             </form>
           </div>
           
