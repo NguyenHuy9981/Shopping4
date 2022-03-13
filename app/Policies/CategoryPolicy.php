@@ -63,9 +63,9 @@ class CategoryPolicy
      * @param  \App\Category  $category
      * @return mixed
      */
-    public function delete(User $user, Category $category)
+    public function delete(User $user)
     {
-        //
+        return $user->checkPermissionAccess('delete_category');
     }
 
     /**

@@ -37,7 +37,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     
         Route::post('/update/{id}', 'CategoryController@update')->name('categories.update');
     
-        Route::get('/delete/{id}', 'CategoryController@delete')->name('categories.delete');
+        Route::get('/delete/{id}', 'CategoryController@delete')->name('categories.delete')->middleware('can:delete-category');
     });
 
 

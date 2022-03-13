@@ -96,7 +96,7 @@ class CategoryController extends Controller
         return response()->json([
             'code' => 200,
             'message' => 'Success'
-        ]);
+        ], 200);
 
     }
 
