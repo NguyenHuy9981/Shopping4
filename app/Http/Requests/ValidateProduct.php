@@ -24,7 +24,7 @@ class ValidateProduct extends FormRequest
     public function rules()
     {
         return [
-            'name'=> 'required|unique:products',
+            'name'=> 'required',
             'price' => 'required',
             'content' => 'required',
             // 'parent_id' => 'required',

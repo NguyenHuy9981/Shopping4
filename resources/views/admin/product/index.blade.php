@@ -65,7 +65,7 @@
         </table>
 
         <div class="div-md-12">
-          
+          {{ $products->links() }}
         </div>
 
         </div>

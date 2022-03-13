@@ -34,6 +34,19 @@ class Recusive {
                     }
     
                 // $this->categoryRecusive($value['id'], $parentId);
+                    foreach($this->data as $value3) {
+                        if($value3['parent_id'] == $value2['id']) {
+                            if(!empty($parentId) && $parentId == $value3['id']) {
+            
+                                $this->htmlSelect .="<option selected value='" . $value3['id'] . "'>" . "----" . $value3['name'] . "</option>";
+                            } else{
+                                $this->htmlSelect .="<option value='" . $value3['id'] . "'>" . "----" .  $value3['name'] . "</option>";
+                            }
+            
+                        // $this->categoryRecusive($value['id'], $parentId);
+                        }
+                    }
+
                 }
                 
             }

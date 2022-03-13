@@ -26,7 +26,7 @@ class AdminProductController extends Controller
 
     use StraitUploadFile;
     function index() {
-        $products = $this->product->paginate();
+        $products = $this->product->paginate(10);
         return view('admin.product.index', compact('products'));
     }
 
